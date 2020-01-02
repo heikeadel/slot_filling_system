@@ -1,0 +1,32 @@
+For training a binary SVM with skip n-gram features:
+
+for all slots s:
+1. compute features for training data
+python -u computeFeatures_binarySkip.py PATH_TO_TRAIN_DATA_FOR_SLOT_S OUTPUTFILE_FEATURES_TRAIN
+2. compute features for development data
+python -u computeFeatures_binarySkip.py PATH_TO_DEV_DATA_FOR_SLOT_S OUTPUTFILE_FEATURES_DEV OUTPUTFILE_FEATURES_TRAIN.vocab
+3. train classifier
+python -u train_binary.py OUTPUTFILE_FEATURES_TRAIN OUTPUTFILE_FEATURES_DEV OUTPUTFILE_MODEL
+
+#######################################################################################
+
+For training a multiclass SVM with skip n-gram features:
+
+1. compute features for training data
+python -u computeFeatures_multiSkip.py PATH_TO_TRAIN_DATA OUTPUTFILE_FEATURES_TRAIN
+2. compute features for development data
+python -u computeFeatures_multiSkip.py PATH_TO_DEV_DATA OUTPUTFILE_FEATURES_DEV OUTPUTFILE_FEATURES_TRAIN.vocab
+3. train classifier
+python -u train_multi.py OUTPUTFILE_FEATURES_TRAIN OUTPUTFILE_FEATURES_DEV OUTPUTFILE_MODEL
+
+######################################################################################
+
+For training a binary SVM with BOW features:
+
+for all slots s:
+1. compute features for training data
+python -u computeFeatures_binaryBOW.py PATH_TO_TRAIN_DATA_FOR_SLOT_S OUTPUTFILE_FEATURES_TRAIN
+2. compute features for development data
+python -u computeFeatures_binaryBOW.py PATH_TO_DEV_DATA_FOR_SLOT_S OUTPUTFILE_FEATURES_DEV OUTPUTFILE_FEATURES_TRAIN.vocab
+3. train classifier
+python -u train_binary.py OUTPUTFILE_FEATURES_TRAIN OUTPUTFILE_FEATURES_DEV OUTPUTFILE_MODEL

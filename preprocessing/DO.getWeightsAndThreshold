@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SLOTS="per:cause_of_death org:alternate_names org:date_founded org:founded_by org:members org:parents per:alternate_names per:children per:date_of_birth per:date_of_death per:schools_attended per:siblings per:location_of_death org:location_of_headquarters org:top_members_employees per:age per:employee_or_member_of per:location_of_birth per:locations_of_residence per:origin per:spouse per:title"
+
+svmVersion="binarySkip" # choose between binaryBOW, binarySkip and multiSkip
+cnnVersion="binary" # choose between binary, multi, joint, pipeline and global
+outfile="../data/weightsAndThresholds/PAT+SVM$svmVersion+CNN$cnnVersion"
+
+for s in $SLOTS
+do
+  echo $s
+  python -u getWeightsAndThresholds.py $s $svmVersion $cnnVersion $outfile
+done

@@ -1,0 +1,13 @@
+train=TRAINFILE
+wordvectors=data/vecs_50dim.txt
+hidden=100
+batchsize=10
+lrate=0.1
+filtersize=3
+kmax=3
+nkerns=300
+contextsize=40
+additionalInput=1
+lambda2=0.00001
+dev=DEVFILE
+net=cnn/models_binary/org:top_members_employees.withFlag.final
